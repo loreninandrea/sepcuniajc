@@ -1,0 +1,27 @@
+Perfiles:
+    type: entity
+    table: perfiles
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'Representa la llave primaria de la tabla'
+            id: true
+            generator:
+                strategy: SEQUENCE
+    fields:
+        nombre:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: true
+                comment: 'Nombre descriptivo del perfil de usuarios'
+        created:
+            type: date
+            nullable: true
+            options:
+                comment: 'Fecha de registro del perfil'
+    lifecycleCallbacks: {  }

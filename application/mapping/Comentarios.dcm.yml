@@ -1,0 +1,61 @@
+Comentarios:
+    type: entity
+    table: comentarios
+    indexes:
+        IDX_F54B3FC044E38B19:
+            columns:
+                - materia_ejecucion_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'LLave primeria de la tabla'
+            id: true
+            generator:
+                strategy: SEQUENCE
+    fields:
+        autor:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Representa el autor del comentario 1 docente 2 estudiante o representante.'
+        descripcion:
+            type: string
+            nullable: true
+            length: 500
+            options:
+                fixed: true
+                comment: 'Descripción del comentario del docente'
+        usuarioId:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Usuario que realiza el comentario'
+            column: usuario_id
+        tipo:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'Representa el tipo de comentario '
+        created:
+            type: datetime
+            nullable: true
+            options:
+                default: now()
+    manyToOne:
+        materiaEjecucion:
+            targetEntity: MateriasPlan
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                materia_ejecucion_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

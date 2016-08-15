@@ -1,0 +1,41 @@
+PerfilesUsuarios:
+    type: entity
+    table: perfiles_usuarios
+    indexes:
+        IDX_6A7AE31F57291544:
+            columns:
+                - perfil_id
+        IDX_6A7AE31FDB38439E:
+            columns:
+                - usuario_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: SEQUENCE
+    manyToOne:
+        perfil:
+            targetEntity: Perfiles
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                perfil_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        usuario:
+            targetEntity: Usuarios
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                usuario_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

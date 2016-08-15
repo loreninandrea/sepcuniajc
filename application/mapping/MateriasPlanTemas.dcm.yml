@@ -1,0 +1,37 @@
+MateriasPlanTemas:
+    type: entity
+    table: materias_plan_temas
+    indexes:
+        IDX_BE75DF23B54DBBCB:
+            columns:
+                - materia_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'Llave primeria de la tabla'
+            id: true
+            generator:
+                strategy: SEQUENCE
+    fields:
+        titulo:
+            type: string
+            nullable: true
+            length: 500
+            options:
+                fixed: true
+                comment: 'Nombre descriptivo del tema'
+    manyToOne:
+        materia:
+            targetEntity: Materias
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                materia_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

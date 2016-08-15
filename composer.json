@@ -1,0 +1,27 @@
+{
+  "name": "ejecutarProgramas",
+  "description": "Control para la ejecución de programas",
+  "require": {
+    "doctrine/orm": "^2.5.1",
+    "gedmo/doctrine-extensions": "*",
+    "guzzlehttp/guzzle": "*",
+    "php": ">=5.2",
+    "symfony/event-dispatcher": "*",
+    "symfony/process": "*",
+    "symfony/yaml": "*"
+  },
+  "config": {
+    "vendor-dir": "application/libraries/composer"
+  },
+  
+  "autoload": {
+    "psr-0": {
+      "": [
+      ]
+    },
+    "psr-4": {
+      "Doctrine\\Plugins\\": "application/libraries/doctrine",
+      "Vendor\\": "application/libraries/vendor"
+    }
+  }
+}

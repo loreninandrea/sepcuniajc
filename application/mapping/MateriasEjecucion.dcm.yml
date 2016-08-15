@@ -1,0 +1,80 @@
+MateriasEjecucion:
+    type: entity
+    table: materias_ejecucion
+    indexes:
+        IDX_F460A4A7A64A8A17:
+            columns:
+                - tema_id
+        IDX_F460A4A78BDA3ABD:
+            columns:
+                - materia_plan_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'LLave primaria de la tabla'
+            id: true
+            generator:
+                strategy: SEQUENCE
+    fields:
+        docenteId:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: docente_id
+        representanteId:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: representante_id
+        confirmado:
+            type: string
+            nullable: true
+            length: null
+            options:
+                fixed: true
+                comment: 'Representa el estado del registro [ N=> no confirmado, S=>  confirmado]'
+        created:
+            type: datetime
+            nullable: true
+            options:
+                comment: 'Fecha del registro'
+                default: now()
+        update:
+            type: datetime
+            nullable: true
+            options:
+                comment: 'Fecha en la que se hace un cambios en el registro'
+                default: now()
+        horas:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Numero de horas trabajadas por el docente'
+    manyToOne:
+        tema:
+            targetEntity: MateriasPlanTemas
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                tema_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        materiaPlan:
+            targetEntity: MateriasPlan
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                materia_plan_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

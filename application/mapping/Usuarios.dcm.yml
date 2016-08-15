@@ -1,0 +1,46 @@
+Usuarios:
+    type: entity
+    table: usuarios
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                comment: 'LLave primaria de la tabla de  usuarios'
+            id: true
+            generator:
+                strategy: SEQUENCE
+    fields:
+        email:
+            type: string
+            nullable: true
+            length: 300
+            options:
+                fixed: true
+                comment: 'email del usuario'
+        password:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: true
+                comment: 'Password del usuario'
+        created:
+            type: datetime
+            nullable: true
+            options:
+                comment: 'Fecha de creación del registro'
+        updated:
+            type: datetime
+            nullable: true
+            options:
+                comment: 'Fecha de actualización del registro'
+        nombre:
+            type: string
+            nullable: true
+            length: 250
+            options:
+                fixed: true
+                comment: 'Nombre completo del usuario'
+    lifecycleCallbacks: {  }

@@ -1,0 +1,21 @@
+Materias:
+    type: entity
+    table: materias
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: SEQUENCE
+    fields:
+        nombre:
+            type: string
+            nullable: true
+            length: 250
+            options:
+                fixed: true
+                comment: 'Nombre descriptivo de la materia'
+    lifecycleCallbacks: {  }

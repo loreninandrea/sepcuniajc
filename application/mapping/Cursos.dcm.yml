@@ -1,0 +1,22 @@
+Cursos:
+    type: entity
+    table: cursos
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                comment: "LLave primaria del curso\r\n"
+            id: true
+            generator:
+                strategy: SEQUENCE
+    fields:
+        nombre:
+            type: string
+            nullable: true
+            length: 250
+            options:
+                fixed: true
+                comment: 'Nombre descriptivo de  la materia'
+    lifecycleCallbacks: {  }

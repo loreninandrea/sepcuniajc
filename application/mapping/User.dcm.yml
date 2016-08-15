@@ -1,0 +1,15 @@
+User:
+  type: entity
+  table: user
+  options:
+    comment: 'System users'
+  gedmo:
+    soft_deleteable:
+      field_name: deleted
+      time_aware: false
+  id:
+    id:
+      type: bigint
+      generator:
+        strategy: IDENTITY
+  fields:

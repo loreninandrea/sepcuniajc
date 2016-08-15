@@ -1,0 +1,41 @@
+CursosMaterias:
+    type: entity
+    table: cursos_materias
+    indexes:
+        IDX_840D1E5587CB4A1F:
+            columns:
+                - curso_id
+        IDX_840D1E55B54DBBCB:
+            columns:
+                - materia_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: SEQUENCE
+    manyToOne:
+        curso:
+            targetEntity: Cursos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                curso_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        materia:
+            targetEntity: Materias
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                materia_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,95 @@
+.table-pendientes th{
+    font-size: 12px;
+}
+
+.table-pendientes td{
+    font-size: 11px;
+}
+.table-pendientes td .text-muted{
+    font-size: 0.8em;
+}
+
+.popover-content .comentario:last-child{
+    border-bottom: none;
+}
+
+.comentario{
+    font-size: 10px;
+    border-bottom: 1px solid #CCCCCC;
+    padding: 5px 0px;
+}
+
+.comentario i{
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.contador{
+    font-size: 11px;
+    color: #C9302C;
+    font-weight: 700;
+}
+
+.comentario-contador .item{
+    font-size: 12px;
+}
+
+.lista-cursos h3{
+    font-size: 0.9em;
+}
+
+.lista-cursos  .small-box{
+
+}
+
+.lista-cursos p{
+    text-transform: uppercase;
+    display: block;
+    min-height: 80px;
+}
+
+.oculto{
+    display: none !important;
+}
+
+.comentario-titulo{
+    font-size: 12px;
+    border-bottom: 1px solid #CCCCCC;
+    text-align: center;
+}
+
+.tab-comentario{
+    font-size: 0.8em;
+    margin-bottom: 10px;
+}
+
+.tab-comentario label{
+    display: block;
+    width: 100%;
+}
+
+.tab-comentario i{
+    display: block;
+    width: 100%;
+    font-weight: bold;
+}
+
+.tab-comentario .btn{
+    margin-top: 10px;
+    float: right;
+}
+
+.tab-comentario .btn-info {
+    margin-right: 10px;
+}
+
+#lista-comentarios{
+    max-height: 600px;
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.accion-comentario{
+    margin-top: 15px;
+}

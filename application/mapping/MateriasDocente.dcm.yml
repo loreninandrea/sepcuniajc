@@ -1,0 +1,38 @@
+MateriasDocente:
+    type: entity
+    table: materias_docente
+    indexes:
+        IDX_3F7C99ABB54DBBCB:
+            columns:
+                - materia_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: SEQUENCE
+    fields:
+        docenteId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: docente_id
+        created:
+            type: datetime
+            nullable: false
+    manyToOne:
+        materia:
+            targetEntity: Materias
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                materia_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
